@@ -5,13 +5,13 @@ client.on('connect', () => {
     console.log('Connected to socket server!')
 })
 
-client.on('server_stats', (data) => {
+client.on('server_stats', (stats) => {
     const {
         cpuUsage,
         totalMem,
         usedMem,
         netIn
-    } = data
+    } = stats
 
     console.log(`CPU usage: ${cpuUsage}%, RAM used: ${usedMem} / ${totalMem} (Mb), network: ${netIn}`)
 })
